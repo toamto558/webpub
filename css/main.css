@@ -1,0 +1,83 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+*{margin: 0; padding:0;}
+body{
+    background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+#bgvideo{
+    min-width:100%; 
+    min-height:100vh;
+    position: fixed;
+    width:auto;
+    height:auto;
+    z-index: -999;
+}
+[출처] 풀스크린 영상재생 (목포한양직업전문학교) | 작성자 뚱아비
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    display: block;
+    color:inherit;
+}
+img{
+    display: block;
+}
+section{
+    height:100vh;
+    position: relative;
+    font-family: 'Noto Sans KR', sans-serif;
+    color:#333;
+}
+section:nth-child(even){
+    background:#ccc;
+   
+}
+
+#intro .title{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+}
+#intro .title h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+#profile .title{
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+}
+section.on .card{
+    position: absolute;
+    top:379px;
+    left:50px;
+    opacity: 1;
+}
+
+section.on .mockup{
+    position: absolute;
+    top:50%; left: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    
+}
+section .card{
+    position: absolute;
+    top:379px;
+    left:-250px;
+    opacity: 0;
+    transition: .3s;
+}
+
+section .mockup{
+    position: absolute;
+    top:50%; left: -200px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: .6s;
+    transition-delay: .3s;
+}
