@@ -111,10 +111,19 @@ nav .gnb a.active{
     background:#ccc;
 }
 
-
+/* section:nth-child(even){
+    background: #eee;
+} */
 
 section:nth-child(even){
-    background:#eee;
+    background: #eee;
+}
+
+section:nth-child(odd){
+    background:rgba(255,255,255,.8)
+}
+section:nth-child(1){
+    background:none
 }
 
 #intro .title{
@@ -142,11 +151,33 @@ section .card{
 }
 section .mockup{
     position: absolute;
-    top:50%; right:-200px;
-    opacity: 0;
+    top:50%; right:-200px;    
+    opacity: 0;    
+    width:80%;
+    height:70vh;    
     transition: .6s;
     transition-delay: .3s;
     transform: translateY(-50%);
+    cursor: pointer;
+}
+section .mockup:after{
+    content: "자세히 보기";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:100%;    
+    position: absolute;
+    top:0; left:0;
+    background:rgba(0,0,0,.6);
+    font-style: 3rem;
+    color:#fff;
+    transition: .3s;
+    opacity: 0;
+}
+section .mockup:hover:after{
+    content: "자세히 보기";
+    opacity: 1;
 }
 section.on .card{
     position: absolute;
@@ -159,6 +190,15 @@ section.on .mockup{
     top:50%; right:0px;
     transform: translateY(-50%);
     opacity: 1;
+}
+/* .mokup bimg */
+#work01 .mockup{background: url("../img/Mockup.jpg");
+background-size: cover;
+background-position: center,center;}
+#work02 .mockup{
+    background: url("../img/Mockup02.jpg");
+    background-size: cover;
+    background-position: center,center;
 }
 
 /* menu */
