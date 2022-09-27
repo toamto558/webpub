@@ -50,7 +50,7 @@ header{
 }
 
 /* slide */
-#slide{
+/* #slide{
     overflow: hidden;
 }
 #slide img{
@@ -91,7 +91,7 @@ header{
     84%{margin-left: -500%; opacity:1;}
     99%{margin-left: -500%; opacity:1;}
     100%{margin-left: -500%; opacity:0;}    
-}
+} */
 
 /* news */
 #news{
@@ -162,7 +162,7 @@ header{
     width:80%;
     margin: 0 auto;
     display: flex;
-    font-family: 'IBMPlexSansKR-Regular';
+    font-family: 'Noto Sans KR', sans-serif; 
     
 }
 #event>li{
@@ -185,8 +185,8 @@ header{
 .eventSlide{
     width:500%;
     display: flex;
-    animation: slide 12s infinite;
-}
+    animation: slide 12s infinite;}
+    
 @keyframes slide{
     0%{margin-left: 0;}
     25%{margin-left: -100%;}
