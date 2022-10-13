@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        :root{
+            --btn-bg:#333;
+            --btn-color:#fff;
+            --cir-bg:#ccc;
+            --light-btn-bg:#69f;
+        }
+        *{margin:0; padding:0;}
+        .btn{
+            width:120px; height:40px;
+            border-radius: 20px;
+            background:var(--btn-bg);
+            position: relative;
+        }
+        .btn.on{
+            background:var(--light-btn-bg);
+        }
+        .btn-circle{
+            width:36px; height:36px;
+            border-radius: 50%;
+            background:var(--cir-bg);
+            position: absolute;
+            top:2px;  left:2px; 
+            transition: .3s;         
+        }
+        .btn.on .btn-circle{
+            left:82px;
+        }
+        .btn-text{
+            text-align: center;
+            line-height: 40px;
+            color:var(--btn-color);
+            font-size: .8rem;
+            transform: translateX(10px);
+            transition: .3s;
+        }
+        .btn.on .btn-text{
+            transform: translateX(-15px);
+        }
+        #profile.on{
+            background:var(--btn-bg);
+            color:var(--btn-color);
+        }
+    </style>
+</head>
+<body>
+    <section id="profile">
+        <div class="btn">
+            <div class="btn-text">다크 모드</div>
+            <div class="btn-circle"></div>
+        </div>
+        fdfsadfdsaf
+    </section>
+    
+
+    <script>
+        $(".btn").click(
+            function(){
+                $(".btn").toggleClass("on");
+                $("#profile").toggleClass("on");
+                var onoff = $(".btn").hasClass("on");
+                console.log(onoff);
+                if(onoff){
+                    $(".text").html("라이트모드");
+                }else{
+                    $(".text").html("다크모드");
+                }
+            }
+        );
+    </script>
+</body>
+</html>

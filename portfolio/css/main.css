@@ -1,6 +1,13 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
+:root{
+    --btn-bg:#222;
+    --btn-color:#fff;
+    --cir-bg:#ccc;
+    --light-btn-bg:#69f;
+}
+
 *{margin: 0; padding:0;}
 
 #bgvideo{
@@ -111,20 +118,16 @@ nav .gnb a.active{
     background:#ccc;
 }
 
-/* section:nth-child(even){
-    background: #eee;
-} */
-
 section:nth-child(even){
-    background: #eee;
+    background:#eee;
 }
-
 section:nth-child(odd){
-    background:rgba(255,255,255,.8)
+    background:rgba(255,255,255,.8);
 }
 section:nth-child(1){
-    background:none
+    background:#000
 }
+
 
 #intro .title{
     position: absolute;
@@ -136,18 +139,16 @@ section:nth-child(1){
     font-size: 3rem;
 }
 
-#profile .title{
-    position: absolute;
-    top:50%; left:50%;
-    transform: translate(-50%, -50%);
-}
-
 section .card{
     position: absolute;
-    top:379px;
+    bottom: 15vh;
+    width:15%;
     left:-250px;
     opacity: 0;
     transition: .6s;
+}
+section .card img{
+    width:70%;
 }
 section .mockup{
     position: absolute;
@@ -180,8 +181,6 @@ section .mockup:hover:after{
     opacity: 1;
 }
 section.on .card{
-    position: absolute;
-    top:379px;
     left:50px;
     opacity: 1;
 }
@@ -191,15 +190,29 @@ section.on .mockup{
     transform: translateY(-50%);
     opacity: 1;
 }
-/* .mokup bimg */
-#work01 .mockup{background: url("../img/Mockup.jpg");
-background-size: cover;
-background-position: center,center;}
+
+/* .mokup bgimg */
+#work01 .mockup{
+    background: url("../img/Mockup.jpg");
+    background-size: cover;
+    background-position: center center;
+}
 #work02 .mockup{
     background: url("../img/Mockup02.jpg");
     background-size: cover;
-    background-position: center,center;
+    background-position: center center;
 }
+#work03 .mockup{
+    background: url("../img/Mockup03.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#work04 .mockup{
+    background: url("../img/Mokup04.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
 
 /* menu */
 .menu{
@@ -221,4 +234,109 @@ background-position: center,center;}
 .menu a.on{
     background:#ffa;
     outline: 3px solid #333;
+}
+
+/* profile darkMode btn */
+.btn{
+    width:120px; height:40px;
+    border-radius: 20px;
+    background:var(--btn-bg);
+    position: absolute;
+    top:40px; left:40px;
+    z-index: 9999999990;
+}
+.btn.active{
+    background:var(--light-btn-bg);
+}
+.btn-circle{
+    width:36px; height:36px;
+    border-radius: 50%;
+    background:var(--cir-bg);
+    position: absolute;
+    top:2px;  left:2px; 
+    transition: .3s;         
+}
+.btn.active .btn-circle{
+    left:82px;
+}
+.btn-text{
+    text-align: center;
+    line-height: 40px;
+    color:var(--btn-color);
+    font-size: .8rem;
+    transform: translateX(10px);
+    transition: .3s;
+}
+.btn.active .btn-text{
+    transform: translateX(-15px);
+}
+#profile.active{
+    background:var(--btn-bg);
+    color:var(--btn-color);
+}
+
+/* profile 사선이동 배경 */
+#profile{
+    overflow: hidden;
+    background: none; 
+}
+.pro-bg{
+    width:100%;
+    height:100vh;
+    background: #eee;
+    position: absolute;
+    z-index: -100;
+}
+.bg-wrap{
+    width:200%;
+    height:200vh;
+    position: absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    z-index: -1;
+}
+#profile .bg-box1{
+    width:45%;
+    height:100%;
+    background:#ccc;
+    transform: rotate(15deg) translateY(-1000px);
+    transform-origin: right center;
+    transition: .6s;
+    transition-delay: 1s;
+}
+#profile .bg-box2{
+    width:55%;
+    height:100%;
+    background:#555;
+    transform: rotate(15deg) translateY(1000px);
+    transform-origin: left center;
+    transition: .6s;
+    transition-delay: 1.2s;
+}
+#profile.on .bg-box1{
+    transform: rotate(15deg);
+}
+#profile.on .bg-box2{
+    transform: rotate(15deg);
+}
+
+#profile .title{
+    position: absolute;
+    top:20%; left:10%;
+    transform: translate(-50%, -50%);
+}
+
+.introduce img{
+    opacity: 0;
+    transition: .6s;
+    transition-delay: 1s;
+    position: absolute;
+    top: -50%; right: 0%;
+    transform: translateY(-50%);
+}
+.introduce.on img{
+    position: absolute;
+    top:50%;right: 0;
+    opacity: 1;;
 }

@@ -1,4 +1,3 @@
-<style>
         *{
             margin:0; padding:0;
         }
@@ -18,7 +17,7 @@
          color:transparent;
          position: relative;
        }
-       .slick-prev:before{
+       .slick-prev:before{  
             content:"\e93b"; font-family: "xeicon";
             color:#333;
             font-size: 1rem;
@@ -77,4 +76,31 @@
         width: 40px;
         background: #333;
        }
-    </style>
+
+       
+       li{list-style: none;}
+       img{
+           width:100%;
+       }
+       .hit-slide{
+           width:70%;
+           margin: 0 auto;
+       } 
+       .hit-slide-wrap{
+           position:relative;
+       }
+       .hit-arrow{
+           position:absolute;
+           top:50%;
+           transform: translateY(-50%);
+           z-index: 1000;
+       }
+       .hit-prev{
+           left:10%;
+       }
+       .hit-next{
+           right:10%;
+       }
+       .hit-slide li{
+           margin: 10px;
+       }

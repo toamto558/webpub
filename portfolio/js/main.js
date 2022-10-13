@@ -25,14 +25,22 @@ function go(e){
     $("html, body").stop().animate({scrollTop:offset},600,"easeInOutExpo");
 
     setTimeout(activeMenu,300);
-}
 
+    if(sectionCounter == 1){
+        $(".introduce").addClass("on");
+    }else{
+        if(sectionCounter < 2){
+            $(".introduce").removeClass("on");
+        }
+    }
+}
 function activeMenu(){
     // section.forEach(function(ele){ele.classList.remove("on");});
     for(var i=0; i<section.length; i++){
         section[i].classList.remove("on");
     }
     section[sectionCounter].classList.add("on");
+
 
     $(".menu a").removeClass("on");
     $(".menu li").eq(sectionCounter).children("a").addClass("on");
@@ -51,6 +59,13 @@ function goSection(e){
     $("html, body").stop().animate({scrollTop:offset},600,"easeInOutExpo");
 
     setTimeout(activeMenu,300);
+    if(sectionCounter == 1){
+        $(".introduce").addClass("on");
+    }else{
+        if(sectionCounter < 2){
+            $(".introduce").removeClass("on");
+        }
+    }
 }
 
 // 스크롤 막기 시작
@@ -67,5 +82,19 @@ $(".burger").click(
     function(){
         $(".burger").toggleClass("on");
         $("nav").toggleClass("on");
+    }
+);
+
+$(".btn").click(
+    function(){
+        $(".btn").toggleClass("active");
+        $("#profile").toggleClass("active");
+        var onoff = $(".btn").hasClass("active");
+        console.log(onoff);
+        if(onoff){
+            $(".btn-text").html("라이트모드");
+        }else{
+            $(".btn-text").html("다크모드");
+        }
     }
 );
