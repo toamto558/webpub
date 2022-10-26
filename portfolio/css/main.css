@@ -45,7 +45,7 @@ section{
     color:#333;
 }
 
-.text{color: #fff; font-size: 100px; text-align: center; position: relative; top: 280px; left: -140px;}
+.text{color: #fff; font-size: 40px; text-align: center; position: relative; top: 360px; left: -210px;}
 /* burger */
 .burger{width:40px; height:40px; cursor: pointer;
     position: fixed;
@@ -209,7 +209,7 @@ section.on .mockup{
     background-position: center center;
 }
 #work04 .mockup{
-    background: url("../img/Mokup04.jpg");
+    background: url("../img/mokup5.jpg");
     background-size: cover;
     background-position: center center;
 }
