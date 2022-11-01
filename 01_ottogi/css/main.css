@@ -184,7 +184,7 @@ header{
     width:50%;
 }
 
-
+.eventSlide li{width: 100%;}
 .eventSlide{
     width: 500%;
     display: flex;

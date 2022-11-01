@@ -54,7 +54,7 @@ section{
 }
 .burger .bar{
     width:40px; height:8px;
-    background:#ffa;
+    background:#ccc;
     position: absolute;
     transition: .3s;
 }
@@ -233,7 +233,7 @@ section.on .mockup{
     transition: .3s;
 }
 .menu a.on{
-    background:#ffa;
+    background:#ccc;
     outline: 3px solid #333;
 }
 
@@ -329,15 +329,18 @@ section.on .mockup{
 }
 
 .introduce img{
+    width: 100%;
     opacity: 0;
     transition: .6s;
     transition-delay: 1s;
     position: absolute;
     top: -50%; right: 0%;
     transform: translateY(-50%);
+    
 }
 .introduce.on img{
+    width: 70%;
     position: absolute;
     top:50%;right: 0;
-    opacity: 1;;
+    opacity: 1;
 }
