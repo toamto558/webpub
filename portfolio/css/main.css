@@ -45,7 +45,7 @@ section{
     color:#333;
 }
 
-.text{color: #fff; font-size: 40px; text-align: center; position: relative; top: 360px; left: -210px;}
+.text{color: #fff; font-size: 40px; position: absolute; top: 35%; left: 35%; z-index: 10000;}
 /* burger */
 .burger{width:40px; height:40px; cursor: pointer;
     position: fixed;

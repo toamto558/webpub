@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position sticky</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        *{margin: 0; padding:0;}
+        nav{
+            background: #faa;
+            height:10vh;
+            position: sticky;
+            top:0;
+            z-index: 1;
+        }
+        section{
+            position: relative;
+            height:100vh;
+            background: url('https://cdn.pixabay.com/photo/2022/10/16/13/53/early-morning-7525151_960_720.jpg');
+            background-size: cover;
+            position: center center;
+            background-attachment: fixed;
+        }
+        section:nth-child(odd){
+            filter:grayscale(.5);
+        }
+        .intro{
+            height:90vh;
+            background: url('https://cdn.pixabay.com/photo/2022/10/15/16/44/night-view-7523474_960_720.jpg');
+            background-size: cover;
+            position: center center;
+            background-attachment: fixed;
+        }
+        .title{
+            height: 30vh;
+            position: absolute;
+            top:50px;
+            width:100%;
+            background:#fff;
+        }
+        .text{
+            height: 30vh;
+            position: absolute;
+            bottom:0;
+            width:100%;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="intro">fdsafdsfsdafdsafdsa</div>
+    <nav>
+        <ul class="gnb">
+            <li><a href="#none" data="first">1번</a></li>
+            <li><a href="#none" data="second">2번</a></li>
+            <li><a href="#none" data="third">3번</a></li>
+        </ul>
+    </nav>
+    <section id="first"></section>
+    <section id="second">
+        <div class="title"></div>
+        <div class="text"></div>
+    </section>
+    <section id="third"></section>
+
+    <script>
+        $(".gnb a").click(go);
+
+        function go(){
+            var data = $(this).attr("data");
+            var element = document.querySelector("#"+data);
+            var offset = window.pageYOffset + element.getBoundingClientRect().top;
+            console.log(offset);
+            $("html, body").stop().animate({scrollTop:offset},600,"easeInOutExpo");
+        }
+        //window.pageYOffset + element.getBoundingClientRect().top;
+
+        //$("html, body").stop().animate({scrollTop:offset},600,"easeInOutExpo");
+    </script>
+</body>
+</html>
